@@ -47,27 +47,27 @@ As hipóteses de negócio que orientam a etapa de Feature Engineering foram orga
 - Lojas deveriam vender menos aos finais de semana.
 - Lojas deveriam vender menos durante os feriados escolares.
 
-
 ## 📂 Estrutura do Repositório
 
+```
 ├── api/
-│ ├── handler.py # API Flask que carrega o modelo e expõe o endpoint de previsão
-│ └── rossmann/
-│ └── Rossmann.py # Classe com o pipeline de limpeza, feature engineering e preparação dos dados
+│   ├── handler.py              # API Flask que carrega o modelo e expõe o endpoint de previsão
+│   └── rossmann/
+│       └── Rossmann.py         # Classe com o pipeline de limpeza, feature engineering e preparação dos dados
 ├── data/
-│ ├── train.csv # Dados históricos de vendas (treino)
-│ ├── test.csv # Dados para previsão (teste)
-│ └── store.csv # Dados cadastrais das lojas
+│   ├── train.csv                # Dados históricos de vendas (treino)
+│   ├── test.csv                 # Dados para previsão (teste)
+│   └── store.csv                # Dados cadastrais das lojas
 ├── model/
-│ └── model_rossmann.pkl # Modelo treinado (serializado)
+│   └── model_rossmann.pkl       # Modelo treinado (serializado)
 ├── parameter/
-│ └── *.pkl # Scalers/encoders usados na etapa de Data Preparation
+│   └── *.pkl                    # Scalers/encoders usados na etapa de Data Preparation
 ├── img/
-│ └── MindMapHyphotesis.png # Mapa mental de hipóteses de negócio
-├── m02_v01_store_sales_prediction.ipynb # ... até
-├── m10_v01_store_sales_prediction.ipynb # Notebooks com a evolução do projeto (CRISP-DM)
+│   └── MindMapHyphotesis.png    # Mapa mental de hipóteses de negócio
+├── m02_v01_store_sales_prediction.ipynb   # ... até
+├── m10_v01_store_sales_prediction.ipynb   # Notebooks com a evolução do projeto (CRISP-DM)
 └── README.md
-
+```
 ## 🧠 Modelo Final
 
 Entre os modelos testados (Average Model, Linear Regression, Lasso, Random Forest e XGBoost, todos avaliados com validação cruzada em séries temporais), o **XGBoost Regressor** foi selecionado e teve seus hiperparâmetros ajustados via Random Search, sendo o modelo utilizado em produção (`model/model_rossmann.pkl`).
